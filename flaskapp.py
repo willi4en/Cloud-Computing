@@ -34,12 +34,8 @@ def login():
 			session['currentUser'] = user[0]
 			return redirect(url_for('profile'))
 		else:
-			userList = ""
-			cur.execute("SELECT * FROM users")
-			for row in cur:
-				userList = userList + "{}, {}, {}, {}, {}, {}, {}\n".format(row[0], row[1], row[2], row[3], row[4], row[5], row[6])
 			conn.close()
-			return render_template('login.html', error=userList)
+			return render_template('login.html', error="Invalid Login: Please try again.")
 	elif request.method == 'GET':
 		return render_template('login.html')
 
