@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div>
+      <h1>Welcome, please login.</h1>
+      <br>
+      <a href=login>
+      	<button>Login</button>	
+      </a>
+      <a href=account_creation>
+      	<button>Create Account</button>
+      </a>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+  </body>
+</html>
+
+
